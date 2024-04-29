@@ -33,21 +33,28 @@ public class Main {
         double width = 5.0;
         double height = 2.0;
         double boardSize = 100.0;
-        double space = 1.0;
-        double brickHoleSize = 0.5;
+        double space = 3.0;
+        double brickHoleIncrease = 0.5;
 
+        // cross brick
         Cross cross = new Cross(brickSize, width, height);
         Geometry3D res1 = cross.getGeometry(csg);
         // to view cross
-//        csg.view(res1);
+        csg.view(res1);
 
+        // circle brick
         Circle circle = new Circle(brickSize, width, height);
         Geometry3D res2 = circle.getGeometry(csg);
         // to view circle
 //        csg.view(res2);
 
-        Board board  = new Board(boardSize, space, height, brickSize+brickHoleSize);
-        Geometry3D res3 = board.getGeometry(csg, circle, cross);
+        // new identical cross and circle bricks, with increased width to make board fit the bricks
+        Cross crossCutOut = new Cross(brickSize+brickHoleIncrease, width+brickHoleIncrease, height);
+        Circle circleCutOut = new Circle(brickSize+brickHoleIncrease, width+brickHoleIncrease, height);
+
+        // board with cutouts
+        Board board  = new Board(boardSize, space, height, brickSize);
+        Geometry3D res3 = board.getGeometry(csg, circleCutOut, crossCutOut);
         // to view board
         csg.view(res3);
 

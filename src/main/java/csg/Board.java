@@ -33,6 +33,7 @@ public class Board {
     }
 
     public Geometry3D getGeometry(JavaCSG csg, Circle circle, Cross cross) {
+
         // initializes a circle and a cross
         Geometry3D circleBrick = circle.getGeometry(csg);
         Geometry3D crossBrick = cross.getGeometry(csg);
@@ -43,8 +44,8 @@ public class Board {
         // initializes a board
         Geometry3D board = getBoard3D(csg);
 
-        // moves the brick cutout up by 1 mm, so that it only cuts it from the top
-        brick = csg.translate3DZ(1).transform(brick);
+        // moves the brick cutout up by half the height, so that it only cuts it from the top
+        brick = csg.translate3DZ(height/2).transform(brick);
 
         // moves the cutout up in the top right corner
         brick = csg.translate3D((brickHoleSize + space) * 2, (brickHoleSize + space) * 2, 0).transform(brick);
