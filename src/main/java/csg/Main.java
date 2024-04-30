@@ -29,18 +29,21 @@ public class Main {
 //        Geometry3D thingRotated = csg.rotateExtrude(csg.degrees(360),64, thing);
 //        csg.view(thingRotated);
 
-        double brickSize = 30.0;
-        double width = 5.0;
-        double height = 2.0;
-        double boardSize = 100.0;
-        double space = 3.0;
+        double scale = 1.0;
+
+        double brickSize = 30.0 * scale;
+        double width = 5.0 * scale;
+        double height = 2.0 * scale;
+        double boardSize = 100.0 * scale;
+        double space = 3.0 * scale;
+
         double brickHoleIncrease = 0.5;
 
         // cross brick
         Cross cross = new Cross(brickSize, width, height);
         Geometry3D res1 = cross.getGeometry(csg);
         // to view cross
-        csg.view(res1);
+//        csg.view(res1);
 
         // circle brick
         Circle circle = new Circle(brickSize, width, height);
