@@ -53,10 +53,10 @@ public class Board {
         {
             for (int j = 1; j <= 3; j++)
             {
-                // move the brick
+                // moves the brick
                 Geometry3D translatedBrick = csg.translate3D(-(brickHoleSize + space) * i, -(brickHoleSize + space) * j, 0).transform(brick);
 
-                // Cut out the translated brick from the board
+                // cuts out the moved brick from the board
                 board = csg.difference3D(board, translatedBrick);
             }
         }
