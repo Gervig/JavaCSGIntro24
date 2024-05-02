@@ -10,19 +10,22 @@ public class Board {
     private final double height;
     private final double brickHoleSize;
 
-    public Board(double boardSize, double space, double height, double brickHoleSize) {
+    public Board(double boardSize, double space, double height, double brickHoleSize)
+    {
         this.boardSize = boardSize;
         this.space = space;
         this.height = height;
         this.brickHoleSize = brickHoleSize;
     }
 
-    private Geometry2D getBoard2D(JavaCSG csg) {
+    private Geometry2D getBoard2D(JavaCSG csg)
+    {
         Geometry2D rect = csg.rectangle2D(boardSize, boardSize);
         return rect;
     }
 
-    private Geometry3D getBoard3D(JavaCSG csg) {
+    private Geometry3D getBoard3D(JavaCSG csg)
+    {
         Geometry2D rect2D = getBoard2D(csg);
         Geometry3D res = csg.linearExtrude(height, false, rect2D);
         return res;
