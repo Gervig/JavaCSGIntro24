@@ -48,6 +48,7 @@ public class Main {
 //        csg.view(res1);
 
         // circle brick
+        //todo make circle fit better onto board
         Circle circle = new Circle(brickSize-brickHoleIncrease*2, width-brickHoleIncrease*4, height);
         Geometry3D res2 = circle.getGeometry(csg);
         // to view circle
