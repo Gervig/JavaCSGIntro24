@@ -10,7 +10,8 @@ public class Circle
     private final double width;
     private final double height;
 
-    public Circle(double brickSize, double width, double height) {
+    public Circle(double brickSize, double width, double height)
+    {
         this.brickSize = brickSize;
         this.width = width;
         this.height = height;
@@ -27,5 +28,4 @@ public class Circle
         Geometry2D circle = csg.ring2D(brickSize-width, brickSize,64);
         return circle;
     }
-
 }

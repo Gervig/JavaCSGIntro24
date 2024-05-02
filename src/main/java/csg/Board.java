@@ -17,10 +17,6 @@ public class Board {
         this.brickHoleSize = brickHoleSize;
     }
 
-    //    public Geometry3D getGeometry(JavaCSG csg)
-//    {
-//        return intersectBoard(csg, circle.getGeometry(csg), )
-//    }
     private Geometry2D getBoard2D(JavaCSG csg) {
         Geometry2D rect = csg.rectangle2D(boardSize, boardSize);
         return rect;
@@ -32,8 +28,8 @@ public class Board {
         return res;
     }
 
-    public Geometry3D getGeometry(JavaCSG csg, Circle circle, Cross cross) {
-
+    public Geometry3D getGeometry(JavaCSG csg, Circle circle, Cross cross)
+    {
         // initializes a circle and a cross
         Geometry3D circleBrick = circle.getGeometry(csg);
         Geometry3D crossBrick = cross.getGeometry(csg);

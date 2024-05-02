@@ -11,6 +11,8 @@ public class Main {
     {
         JavaCSG csg = JavaCSGFactory.createNoCaching();
 
+        // stuff we tested in class
+
 //        Geometry3D box = csg.box3D(10, 20, 30, true);
 //        Geometry3D sphere = csg.sphere3D(20,128, true);
 //        box = csg.intersection3D(box, sphere);
