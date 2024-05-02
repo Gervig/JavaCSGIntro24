@@ -46,10 +46,10 @@ public class Main {
 //        csg.view(res1);
 
         // circle brick
-        Circle circle = new Circle(brickSize, width, height);
+        Circle circle = new Circle(brickSize-brickHoleIncrease*2, width-brickHoleIncrease*4, height);
         Geometry3D res2 = circle.getGeometry(csg);
         // to view circle
-//        csg.view(res2);
+        csg.view(res2);
 
         // new identical cross and circle bricks, with increased width to make board fit the bricks
         Cross crossCutOut = new Cross(brickSize+brickHoleIncrease, width+brickHoleIncrease, height);
@@ -59,7 +59,7 @@ public class Main {
         Board board  = new Board(boardSize, space, height, brickSize);
         Geometry3D res3 = board.getGeometry(csg, circleCutOut, crossCutOut);
         // to view board
-        csg.view(res3);
+//        csg.view(res3);
 
     }
 }

@@ -24,11 +24,6 @@ public class Circle
     }
     private Geometry2D getCircle2D(JavaCSG csg)
     {
-//        Geometry2D circle1 = csg.circle2D(brickSize, 64);
-//        Geometry2D circle2 = csg.circle2D(brickSize-width, 64);
-//        Geometry2D circleFinal = csg.intersection2D(circle1, circle2);
-//        return circleFinal;
-
         Geometry2D circle = csg.ring2D(brickSize-width, brickSize,64);
         return circle;
     }
